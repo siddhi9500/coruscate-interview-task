@@ -17,14 +17,21 @@ public class Task2 {
         System.out.println("Please Enter Number of Test case:");
         Scanner s = new Scanner(System.in);   //take input of user 
         int n = s.nextInt();
+        int[] arrayOFTrial = new int[n];
+        
+        System.out.println("Please Enter Seat Number:");
+        for(int j = 0; j<arrayOFTrial.length; j++){
+            
+            int t = s.nextInt();   //take input of seat number
+            arrayOFTrial[j] = t;
+        }
         // int n=Integer.parseInt(ns);
          
-        for (int i = 1; i <= n; i++) {
-            System.out.println("Please Enter Seat Number:");
-            int t = s.nextInt();   //take input of seat number
+        for (int i = 0; i < arrayOFTrial.length; i++) {
+            
         // int t=Integer.parseInt(ns);
-            int l = t / 12;      //divide by 12 because of there is 12 seat in one cabin
-            int m = t % 12;       //finding seat number is multiplier of 12 or not
+            int l = arrayOFTrial[i] / 12;      //divide by 12 because of there is 12 seat in one cabin
+            int m = arrayOFTrial[i] % 12;       //finding seat number is multiplier of 12 or not
             if (m != 0) {    
                 int b = (12 * (l + 1)) - m + 1; //get value of seat and assign as image seat map
                 System.out.print(b + " ");
